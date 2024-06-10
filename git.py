@@ -3,7 +3,7 @@ import subprocess
 print("\nTo push | push('message')\n\nTo pull | pull()\n")
 username = 'Francisco-Sousa-a22301231'
 token = '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'
-url = f"https://{username}:{token}@github.com/{username}/wecan.git"
+url = f"https://{username}:{token}@github.com/{username}/a22301231-projeto-pw.git"
 
 def push(commit_message):
 
