@@ -3,35 +3,6 @@
 
 {% block content %}
 
-<div id="bandas-laptop" class="banda flex-column">
-    <img src="/media/{{banda.foto}}" alt="{{banda.nome}}">
-    <h2 class="banda-nome flex-column">
-        {{ banda.nome }}
-    </h2>
-</div>
-<div class="editBand">
-    <a href="{% url 'bandas:banda_edit' pk=banda.pk %}">Edit Band</a>
-</div>
-<div class="table-container">
-    <table class="reviews-table">
-        <tr>
-            {% for album in albums %}
-                <td>
-                    <div class="banda news-card">
-                        <a href="{% url 'bandas:album' album.id %}">
-                        <h5 class="banda-nome flex-column"  style="margin-bottom:40px">
-                            {{ album.nome }}
-                        </h5>
-                        </a>
-                        <div class="banda-foto">
-                            <img src="/media/{{album.capa}}" style="margin-bottom:20px" alt="{{album.nome}}">
-                        </div>
-                    </div>
-                </td>
-            {% endfor %}
-        </tr>
-    </table>
-</div>
 <div id="bandas-mobile" class="bandas flex-column">
         <div class="banda flex-column">
             <img src="/media/{{banda.foto}}" alt="{{banda.nome}}">
@@ -55,15 +26,6 @@
         </div>
     </div>
     <style>
-        @media (max-width:768px) {
-    #bandas-laptop {
-        display:none;
-    }
-
-    #bandas-mobile  {
-        display:block;
-    }
-}
 
 .banda img {
         width:100% !important;

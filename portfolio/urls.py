@@ -5,4 +5,5 @@ app_name = 'portfolio'
 
 urlpatterns = [
     path('', views.home_view, name='home'),
+    path('videos/', views.videos, name='videos'),
 ]

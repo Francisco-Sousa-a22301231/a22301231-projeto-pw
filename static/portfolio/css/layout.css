@@ -6,6 +6,12 @@ body, html {
     position:relative;
 }
 
+nav {
+    z-index:10;
+    background-color:gold;
+    color:black;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -32,15 +38,19 @@ body, html {
 
 #hero {
     display: flex;
+    margin-top:-200px;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url('hero-background.jpg') no-repeat center center/cover;
+    background-image: url('https://wallpaperaccess.com/full/6327211.png');
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
 }
 
 .hero-content {
+    margin-top:500px;
     max-width: 800px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6); /* Add some background for better text visibility */
@@ -60,8 +70,7 @@ body, html {
 #hero .btn {
     padding: 10px 20px;
     font-size: 1rem;
-    color: white;
-    background-color: #007BFF;
+    background-color: gold;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -69,7 +78,7 @@ body, html {
 }
 
 #hero .btn:hover {
-    background-color: #0056b3;
+    background-color: #FFC300;
 }
 
 #about {
@@ -77,7 +86,6 @@ body, html {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f9f9f9;
 }
 
 .about-container {
@@ -88,7 +96,7 @@ body, html {
 }
 
 .big-card {
-    background-color: white;
+    background-color: gold;
     padding: 40px;
     padding-right: 140px;
     border-radius: 15px;
@@ -103,7 +111,8 @@ body, html {
     right: -40px;
     width: 150px;
     height: 150px;
-    background-color: white;
+    background-color: black;
+    color:white;
     border-radius: 25%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -152,12 +161,15 @@ body, html {
     display: flex;
     justify-content: space-between;
     padding: 50px;
-    background-color: #f9f9f9;
 }
 
 .projects-section, .technologies-section {
     flex: 1;
     margin: 0 20px;
+}
+
+.projects-section {
+    width:50%;
 }
 
 .projects-section h2, .technologies-section h2 {
@@ -166,6 +178,7 @@ body, html {
 
 .project-card {
     min-width: 300px;
+    height: 340px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -175,9 +188,14 @@ body, html {
     text-align: center;
 }
 
+.project-card, .offering-card {
+    border: 2px solid gold;
+}
+
 .project-card img {
     width: 100%;
     border-radius: 10px;
+    margin-bottom:15px;
 }
 
 /* Fade effect */
@@ -287,7 +305,7 @@ body, html {
     }
 
     .projects-section, .technologies-section {
-        width: 100%;
+        width: 100% !important;
         margin: 20px 0;
     }
 
@@ -297,7 +315,6 @@ body, html {
 }
 
 #offerings {
-    background-color: #f9f9f9;
     text-align: center;
 }
 
@@ -307,7 +324,7 @@ body, html {
 
 .offering-card {
     min-width: 200px;
-    height:320px;
+    height:265px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -411,15 +428,38 @@ body, html {
 .projects-table-wrapper, .offerings-table-wrapper {
     position: relative;
     overflow-x: hidden;
-    padding: 20px 0;
+    height:520px !important;
     justify-content:center;
+    overflow-y: hidden;
 }
 
 .projects-table, .offerings-table {
     display: flex;
+    padding-top:20px;
+    padding-bottom:20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     justify-content:center;
+    height:520px !important;
+}
+
+.projects-wrapper {
+    width:100%;
+}
+
+.projects-table a {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.projects-table a:link,
+.projects-table a:visited,
+.projects-table a:hover,
+.projects-table a:active,
+.projects-table a:focus {
+    all: unset;
+    cursor: pointer;
 }
 
 .contact-wrapper {
@@ -463,6 +503,105 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
-#contact {
+#contact-section {
     margin:auto; !important;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 0;
+    padding-bottom:0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer .footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+.footer .footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center; /* Center the heading text */
+}
+
+.footer .footer-section h2::after {
+    content: '';
+    display: block;
+    margin: 10px auto; /* Center the line horizontally */
+    background: #fff;
+    height: 2px;
+    width: 50px;
+}
+
+.footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Center the list items */
+}
+
+.footer .footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center; /* Center the social icons */
+    gap: 10px;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    background: #fff;
+    color: #333;
+}
+
+.footer .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }

@@ -1,15 +1,18 @@
 {% extends 'meteo/layout.html' %}
+{% load tz %}
 {% load static %}
 {% block content %}
     <h1>{{ city }} Weather Detail</h1>
-    <hr>
-    {% for day in days %}
-        <p>Date: {{ day.forecastDate }}</p>
-        <p>Min: {{ day.tMin }}ºC, Max: {{ day.tMax }}ºC</p>
-        <p>Description: {{ day.weatherType }}</p>
-        <p>Wind: {{ day.windSpeed }} {{ day.predWindDir }}</p>
-        <img src="{{ day.image }}" alt="{{ day.weatherType }} image">
-        <hr>
-    {% endfor %}
-    <p>Source: IPMA API</p>
+    <div class="5-days flex-row">
+        {% for day in days %}
+        <div class="weather-card">
+            <p><span class="label">Date:</span> {{ day.forecastDate|date:"D, F j" }}</p>
+            <p><span class="label">Min:</span> {{ day.tMin }}ºC, <span class="label">Max:</span> {{ day.tMax }}ºC</p>
+            <p><span class="label">Description:</span> {{ day.weatherType }}</p>
+            <p><span class="label">Wind:</span> {{ day.windSpeed }} {{ day.predWindDir }}</p>
+            <img src="{{ day.image }}" alt="{{ day.weatherType }} image">
+            <p class="source">Source: IPMA API</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}

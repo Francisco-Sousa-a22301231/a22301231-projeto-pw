@@ -1,0 +1,86 @@
+{% extends 'meteo/layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h1>Documentação da API</h1>
+
+        <h2>Endpoint: /meteo/cidades</h2>
+        <p>Descrição: Retorna uma lista de cidades e suas informações meteorológicas.</p>
+        <h3>Exemplo de Uso:</h3>
+        <pre><code>curl -X GET https://a22301231.pythonanywhere.com/meteo/cidades</code></pre>
+        <h3>Exemplo de Resposta:</h3>
+        <pre><code>{
+  "pais": "Portugal",
+  "regioes": [
+    {
+      "local": "Lisboa",
+      "globalIdLocal": 1110600,
+      "color": "green"
+    },
+    {
+      "local": "Porto",
+      "globalIdLocal": 1131200,
+      "color": "red"
+    },
+    ...
+  ]
+}</code></pre>
+        <p>A resposta contém uma lista de regiões (cidades) em Portugal, cada uma com seu nome, ID global e cor de alerta associada.</p>
+
+        <h2>Endpoint: /meteo/previsao/hoje/{globalIdLocal}</h2>
+        <p>Descrição: Retorna a previsão meteorológica para hoje para uma cidade específica.</p>
+        <h3>Exemplo de Uso:</h3>
+        <pre><code>curl -X GET https://a22301231.pythonanywhere.com/meteo/previsao/hoje/{globalIdLocal}</code></pre>
+        <h3>Exemplo de Resposta:</h3>
+        <pre><code>{
+  "cidade": "Lisboa",
+  "previsoes": [
+    {
+      "data": "2024-06-07",
+      "temperatura_maxima": 25,
+      "temperatura_minima": 15,
+      "precipitacao": 30,
+      "id": 1,
+      "descricao": "Céu limpo"
+    }
+  ]
+}</code></pre>
+        <p>A resposta contém a previsão meteorológica para hoje para a cidade especificada, incluindo a data, temperatura máxima e mínima, probabilidade de precipitação, ID e descrição do tipo de tempo.</p>
+
+        <h2>Endpoint: /meteo/previsao/semana/{globalIdLocal}</h2>
+        <p>Descrição: Retorna a previsão meteorológica para a semana para uma cidade específica.</p>
+        <h3>Exemplo de Uso:</h3>
+        <pre><code>curl -X GET https://a22301231.pythonanywhere.com/meteo/previsao/semana/{globalIdLocal}</code></pre>
+        <h3>Exemplo de Resposta:</h3>
+        <pre><code>{
+  "cidade": "Lisboa",
+  "previsoes": [
+    {
+      "data": "2024-06-07",
+      "temperatura_maxima": 25,
+      "temperatura_minima": 15,
+      "precipitacao": 30,
+      "id": 1,
+      "descricao": "Céu limpo"
+    },
+    ...
+  ]
+}</code></pre>
+
+        <p>A resposta contém a previsão meteorológica para a semana para a cidade especificada, incluindo uma lista de previsões para cada dia da semana com as informações relevantes.</p>
+
+    <h2>Endpoint: /previsao/img</h2>
+        <p>Descrição: Retorna o link da imagem do tempo de hoje em Lisboa.</p>
+        <h3>Exemplo de Uso:</h3>
+        <pre><code>curl -X GET https://a22301231.pythonanywhere.com/previsao/img</code></pre>
+        <h3>Exemplo de Resposta:</h3>
+        <pre><code>{
+    "src": "https://a22301231.pythonanywhere.com/media/meteo/w_ic_d_03anim.svg"
+}</code></pre>
+    </div>
+    <style>
+        .page {
+            height:100%;
+        }
+    </style>
+{% endblock %}

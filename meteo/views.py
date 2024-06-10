@@ -59,6 +59,8 @@ def weather_detail(request, city_id):
             day['image'] = f"/media/meteo/w_ic_d_{day['idWeatherType']}anim.svg"
         else:
             day['image'] = f"/media/meteo/w_ic_n_{day['idWeatherType']}anim.svg"
+
+        day['forecastDate'] = datetime.strptime(day['forecastDate'], '%Y-%m-%d')
         days.append(day)
 
     context = {
@@ -85,3 +87,6 @@ def is_daytime(lat, lon):
         return True
     else:
         return False
+
+def api(request):
+    return render(request, 'meteo/api.html', {})

@@ -10,7 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% include 'portfolio/navbar.html' %}
+    <div style="padding:15px; padding-top:0; background-color:#fff;">
+        {% include 'portfolio/navbar.html' %}
+    </div>
     <link rel="stylesheet" href="/static/portfolio/css/layout.css?v=1.0">
 </head>
 <body>
@@ -18,5 +20,6 @@
         {% block content %}
         {% endblock %}
     </div>
+    {% include 'portfolio/footer.html' %}
 </body>
 </html>

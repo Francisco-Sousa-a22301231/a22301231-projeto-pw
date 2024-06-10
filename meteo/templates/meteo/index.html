@@ -1,12 +1,20 @@
 {% extends 'meteo/layout.html' %}
 {% load static %}
 {% block content %}
-    <h1>Select a City</h1>
-    <ul>
-        {% for city in cities %}
-            <li>
-                <a href="{% url 'meteo:weather_detail' city.globalIdLocal %}">{{ city.local }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Select a City</h1>
+        <a href="{% url 'meteo:api' %}">API Link</a>
+        <ul>
+            {% for city in cities %}
+                <li>
+                    <a href="{% url 'meteo:weather_detail' city.globalIdLocal %}">{{ city.local }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <style>
+        .page {
+            height:100%;
+        }
+    </style>
 {% endblock %}

@@ -177,9 +177,6 @@ img {
     width:110%;
 }
 
-#bandas-mobile  {
-        display:none;
-    }
 
 #bandas-mobile .banda {
     padding-top:30px;
@@ -214,6 +211,12 @@ img {
     max-width: 100%; /* Ensure the grid doesn't overflow its container */
 }
 
+.album .heading {
+    color:black;
+}
+.full-page-container-musica {
+    color:white;
+}
 .grid-item {
     background-color: #fff;
     border-radius: 25%;
