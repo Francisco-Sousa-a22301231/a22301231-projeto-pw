@@ -1,0 +1,12 @@
+{% extends 'meteo/layout.html' %}
+{% load static %}
+{% block content %}
+    <h1>Select a City</h1>
+    <ul>
+        {% for city in cities %}
+            <li>
+                <a href="{% url 'meteo:weather_detail' city.globalIdLocal %}">{{ city.local }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'meteo/layout.html' %}
+{% load static %}
+{% block content %}
+    <h1>{{ city }} Weather Detail</h1>
+    <hr>
+    {% for day in days %}
+        <p>Date: {{ day.forecastDate }}</p>
+        <p>Min: {{ day.tMin }}ºC, Max: {{ day.tMax }}ºC</p>
+        <p>Description: {{ day.weatherType }}</p>
+        <p>Wind: {{ day.windSpeed }} {{ day.predWindDir }}</p>
+        <img src="{{ day.image }}" alt="{{ day.weatherType }} image">
+        <hr>
+    {% endfor %}
+    <p>Source: IPMA API</p>
+{% endblock %}

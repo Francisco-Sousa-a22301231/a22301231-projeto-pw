@@ -1,0 +1,50 @@
+{% extends 'curso/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page text-center">
+    <div class="heading">
+        <h1>{{ disciplina }}</h1>
+        <div>
+            <p>
+                {{ disciplina.ano }}º Ano | {{ disciplina.semestre }}
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="info">
+        <div class="flex-column">
+            <h5>Apresentação:</h5>
+            <p>{{ disciplina.apresentacao }}</p>
+        </div>
+        <hr>
+        <div class="flex-column">
+            <h5>Programa:</h5>
+            <p>{{ disciplina.programa }}</p>
+        </div>
+        <hr>
+        <div class="flex-column">
+            <h5>Linguagens De Programação:</h5>
+            {% for linguagem in disciplina.linguagens.all %}
+            <p>{{ linguagem }}</p>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="flex-column">
+            <h5>Docentes:</h5>
+            {% for docente in disciplina.docentes.all %}
+            <p>{{ docente }}</p>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="flex-column">
+            <h5>Projetos:</h5>
+            {% for projeto in disciplina.projetos.all %}
+            <p>{{ projeto }}</p>
+            {% endfor %}
+        </div>
+        <hr>
+    </div>
+</div>
+
+{% endblock %}

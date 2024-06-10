@@ -1,0 +1,61 @@
+{% extends 'autenticacao/layout.html'%}
+
+
+{% block content %}
+
+<head>
+    <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <button type="button" onclick="history.back();">Go Back</button>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">PROFILE INFO</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+
+					<form method="post" action="{% url 'autenticacao:update_profile' %}">
+
+                        {% csrf_token %}
+						<div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="username" class="form-control" id="id_username" value="{{ username }}" readonly>
+                        </div>
+						<div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="first_name" class="form-control" id="id_first_name" value="{{ first_name }}" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="last_name" class="form-control" id="id_last_name" value="{{ last_name }}" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                            </div>
+                            <input type="email" name="email" class="form-control" id="id_email" value="{{ email }}" required>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <input class="btn login_btn" type="submit" value="Update Profile">
+                        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+{% endblock %}

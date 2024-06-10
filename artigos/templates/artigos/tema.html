@@ -1,0 +1,21 @@
+{% extends 'artigos/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="heading">{{ tema }}</h2>
+{% for artigo in tema.artigos.all %}
+
+    <div class="news-card flex-column gap">
+    <h2 class="news-title">{{ artigo.titulo }}</h2>
+    <div class="gap flex-row">
+        <a href="{% url 'artigos:tema' artigo.tema.id %}">{{ artigo.tema }}</a>
+        <p>|</p>
+        <span class="date">{{ artigo.data_publicacao }}</span>
+    </div>
+    <img src="/media/{{artigo.imagem }}" alt="News Image">
+    <a href="{% url 'artigos:artigo' artigo.id %}">Ler Mais</a>
+</div>
+
+{% endfor %}
+{% endblock %}

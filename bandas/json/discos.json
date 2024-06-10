@@ -1,0 +1,222 @@
+[
+    {
+        "banda": "Led Zeppelin",
+        "titulo": "Led Zeppelin",
+        "ano_lancamento": 1969,
+        "musicas": [
+            {"titulo": "Good Times Bad Times", "duracao": 166},
+            {"titulo": "Babe I'm Gonna Leave You", "duracao": 391},
+            {"titulo": "Dazed and Confused", "duracao": 388},
+            {"titulo": "Communication Breakdown", "duracao": 148}
+        ]
+    },
+    {
+        "banda": "Led Zeppelin",
+        "titulo": "Led Zeppelin II",
+        "ano_lancamento": 1969,
+        "musicas": [
+            {"titulo": "Whole Lotta Love", "duracao": 333},
+            {"titulo": "What Is and What Should Never Be", "duracao": 249},
+            {"titulo": "The Lemon Song", "duracao": 407},
+            {"titulo": "Thank You", "duracao": 291}
+        ]
+    },
+    {
+        "banda": "Queen",
+        "titulo": "Queen",
+        "ano_lancamento": 1973,
+        "musicas": [
+            {"titulo": "Keep Yourself Alive", "duracao": 214},
+            {"titulo": "Doing All Right", "duracao": 256},
+            {"titulo": "Great King Rat", "duracao": 396},
+            {"titulo": "My Fairy King", "duracao": 265}
+        ]
+    },
+    {
+        "banda": "Queen",
+        "titulo": "Sheer Heart Attack",
+        "ano_lancamento": 1974,
+        "musicas": [
+            {"titulo": "Brighton Rock", "duracao": 339},
+            {"titulo": "Killer Queen", "duracao": 180},
+            {"titulo": "Now I'm Here", "duracao": 257},
+            {"titulo": "Stone Cold Crazy", "duracao": 151}
+        ]
+    },
+    {
+        "banda": "The Rolling Stones",
+        "titulo": "Let It Bleed",
+        "ano_lancamento": 1969,
+        "musicas": [
+            {"titulo": "Gimme Shelter", "duracao": 272},
+            {"titulo": "Love in Vain", "duracao": 239},
+            {"titulo": "Midnight Rambler", "duracao": 444},
+            {"titulo": "You Can't Always Get What You Want", "duracao": 418}
+        ]
+    },
+    {
+        "banda": "The Rolling Stones",
+        "titulo": "Sticky Fingers",
+        "ano_lancamento": 1971,
+        "musicas": [
+            {"titulo": "Brown Sugar", "duracao": 210},
+            {"titulo": "Wild Horses", "duracao": 342},
+            {"titulo": "Can't You Hear Me Knocking", "duracao": 455},
+            {"titulo": "Dead Flowers", "duracao": 244}
+        ]
+    },
+    {
+        "banda": "Pink Floyd",
+        "titulo": "The Dark Side of the Moon",
+        "ano_lancamento": 1973,
+        "musicas": [
+            {"titulo": "Speak to Me", "duracao": 90},
+            {"titulo": "Breathe", "duracao": 163},
+            {"titulo": "Time", "duracao": 413},
+            {"titulo": "Money", "duracao": 382}
+        ]
+    },
+    {
+        "banda": "Pink Floyd",
+        "titulo": "Wish You Were Here",
+        "ano_lancamento": 1975,
+        "musicas": [
+            {"titulo": "Shine On You Crazy Diamond", "duracao": 813},
+            {"titulo": "Welcome to the Machine", "duracao": 447},
+            {"titulo": "Have a Cigar", "duracao": 324},
+            {"titulo": "Wish You Were Here", "duracao": 334}
+        ]
+    },
+    {
+        "banda": "The Beatles",
+        "titulo": "Abbey Road",
+        "ano_lancamento": 1969,
+        "musicas": [
+            {"titulo": "Come Together", "duracao": 259},
+            {"titulo": "Something", "duracao": 181},
+            {"titulo": "Oh! Darling", "duracao": 215},
+            {"titulo": "I Want You (She's So Heavy)", "duracao": 467}
+        ]
+    },
+    {
+        "banda": "The Beatles",
+        "titulo": "Sgt. Pepper's Lonely Hearts Club Band",
+        "ano_lancamento": 1967,
+        "musicas": [
+            {"titulo": "Sgt. Pepper's Lonely Hearts Club Band", "duracao": 122},
+            {"titulo": "With a Little Help from My Friends", "duracao": 163},
+            {"titulo": "Lucy in the Sky with Diamonds", "duracao": 223},
+            {"titulo": "A Day in the Life", "duracao": 335}
+        ]
+    },
+    {
+        "banda": "AC/DC",
+        "titulo": "High Voltage",
+        "ano_lancamento": 1976,
+        "musicas": [
+            {"titulo": "It's a Long Way to the Top (If You Wanna Rock 'n' Roll)", "duracao": 298},
+            {"titulo": "The Jack", "duracao": 343},
+            {"titulo": "T.N.T.", "duracao": 209},
+            {"titulo": "High Voltage", "duracao": 230}
+        ]
+    },
+    {
+        "banda": "AC/DC",
+        "titulo": "Back in Black",
+        "ano_lancamento": 1980,
+        "musicas": [
+            {"titulo": "Hells Bells", "duracao": 312},
+            {"titulo": "Shoot to Thrill", "duracao": 347},
+            {"titulo": "Back in Black", "duracao": 255},
+            {"titulo": "You Shook Me All Night Long", "duracao": 210}
+        ]
+    },
+    {
+        "banda": "Nirvana",
+        "titulo": "Nevermind",
+        "ano_lancamento": 1991,
+        "musicas": [
+            {"titulo": "Smells Like Teen Spirit", "duracao": 301},
+            {"titulo": "In Bloom", "duracao": 254},
+            {"titulo": "Come as You Are", "duracao": 219},
+            {"titulo": "Lithium", "duracao": 257}
+        ]
+    },
+    {
+        "banda": "Nirvana",
+        "titulo": "In Utero",
+        "ano_lancamento": 1993,
+        "musicas": [
+            {"titulo": "Serve the Servants", "duracao": 188},
+            {"titulo": "Heart-Shaped Box", "duracao": 269},
+            {"titulo": "Rape Me", "duracao": 167},
+            {"titulo": "Dumb", "duracao": 147}
+        ]
+    },
+    {
+        "banda": "The Doors",
+        "titulo": "The Doors",
+        "ano_lancamento": 1967,
+        "musicas": [
+            {"titulo": "Break on Through (To the Other Side)", "duracao": 141},
+            {"titulo": "Soul Kitchen", "duracao": 220},
+            {"titulo": "Light My Fire", "duracao": 434},
+            {"titulo": "The End", "duracao": 734}
+        ]
+    },
+    {
+        "banda": "The Doors",
+        "titulo": "L.A. Woman",
+        "ano_lancamento": 1971,
+        "musicas": [
+            {"titulo": "The Changeling", "duracao": 242},
+            {"titulo": "Love Her Madly", "duracao": 206},
+            {"titulo": "Riders on the Storm", "duracao": 429},
+            {"titulo": "L.A. Woman", "duracao": 491}
+        ]
+    },
+    {
+        "banda": "Deep Purple",
+        "titulo": "Machine Head",
+        "ano_lancamento": 1972,
+        "musicas": [
+            {"titulo": "Highway Star", "duracao": 365},
+            {"titulo": "Smoke on the Water", "duracao": 340},
+            {"titulo": "Lazy", "duracao": 433},
+            {"titulo": "Space Truckin'", "duracao": 272}
+        ]
+    },
+    {
+        "banda": "Deep Purple",
+        "titulo": "In Rock",
+        "ano_lancamento": 1970,
+        "musicas": [
+            {"titulo": "Speed King", "duracao": 305},
+            {"titulo": "Bloodsucker", "duracao": 254},
+            {"titulo": "Child in Time", "duracao": 601},
+            {"titulo": "Into the Fire", "duracao": 253}
+        ]
+    },
+    {
+        "banda": "Metallica",
+        "titulo": "Master of Puppets",
+        "ano_lancamento": 1986,
+        "musicas": [
+            {"titulo": "Battery", "duracao": 332},
+            {"titulo": "Master of Puppets", "duracao": 516},
+            {"titulo": "Welcome Home (Sanitarium)", "duracao": 386},
+            {"titulo": "Disposable Heroes", "duracao": 478}
+        ]
+    },
+    {
+        "banda": "Metallica",
+        "titulo": "...And Justice for All",
+        "ano_lancamento": 1988,
+        "musicas": [
+            {"titulo": "Blackened", "duracao": 401},
+            {"titulo": "...And Justice for All", "duracao": 585},
+            {"titulo": "One", "duracao": 447},
+            {"titulo": "Dyers Eve", "duracao": 312}
+        ]
+    }
+]

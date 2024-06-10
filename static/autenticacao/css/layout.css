@@ -1,0 +1,199 @@
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #fff !important; /* White background as in the login page */
+    }
+
+    .navbar-logo {
+      transition: transform 0.5s ease-in-out; /* Speed up the transition a bit */
+    }
+
+    .navbar-logo:hover {
+      animation: shake 0.7s ease-in-out infinite alternate;
+    }
+
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(-1.5px);
+      }
+      50% {
+        transform: translateX(1.5px);
+      }
+    }
+
+    .active {
+        color: #fe0000 !important;
+    }
+
+    .user_card {
+        width: 350px;
+        margin-top: 100px;
+        margin-bottom: auto;
+        background: #fe0000; /* Red background as in the login page */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 25px;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+
+    .form_container {
+        margin-top: 20px;
+    }
+
+    form {
+        text-align: center;
+	    flex-direction: row;
+	    gap: 10px;
+    }
+
+    .gap {
+        gap: 15px;
+    }
+
+    #form-title {
+        color: #fff; /* White text for the title */
+    }
+
+    .btn {
+		    margin-top: 10px;
+		    margin-bottom: 10px;
+			background: #a20000 !important;
+			color: white !important;
+		}
+
+		.btn:hover {
+			background: #870000 !important;
+			transition: background-color 0.5s ease;
+		}
+
+		.btn:active {
+			background: #000000 !important;
+		}
+
+    .login_btn {
+        width: 100%;
+        background: #a20000 !important; /* Dark red background for the button */
+        color: white !important;
+    }
+    .login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+    .login_container {
+        padding: 0 2rem;
+    }
+
+    .container {
+		padding: 15px;
+	}
+
+
+	.info {
+	    text-align: center;
+	    display: flex;
+	    flex-direction: column;
+	    margin-top:20px;
+	    color: black;
+	}
+
+	.login {
+	    color: white;
+	}
+
+	.login:hover {
+	    text-decoration: underline white;
+	}
+
+    .input-group-text {
+        background: #000000 !important; /* Mustard color for input group text */
+        color: white !important;
+        border: 0 !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user, .input_pass:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+
+    .links a {
+        color: #fff; /* White color for links */
+    }
+
+    .links a:hover {
+        text-decoration: underline;
+        color: #fff; /* White color for links on hover */
+    }
+
+    #messages {
+        color: #fff; /* White color for messages */
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .info > div {
+        margin:20px;
+        position: relative;
+
+    }
+
+    .info > div > h5 {
+        font-weight: bold;
+
+    }
+
+    .heading {
+        margin-bottom: 50px;
+    }
+
+
+    .info > div > p {
+        margin-top:30px ;
+    }
+
+    .info div h5 {
+        margin-bottom 20
+    }
+
+    .ects h5, .num_semestres h5 {
+        position: relative !important;
+    }
+
+    .disciplinas h5 {
+        margin-bottom: 30px;
+    }
+
+    .invisible-btn {
+        background-color: transparent;
+        border: none !important;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .page {
+        padding:20px !important;
+    }
+
+

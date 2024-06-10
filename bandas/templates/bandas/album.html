@@ -1,0 +1,66 @@
+{% extends 'bandas/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div id="bandas-laptop" class="bandas flex-row">
+    <div class="banda flex-column">
+        <img src="/media/{{banda.foto}}" alt="{{banda.nome}}">
+        <h2 class="banda-nome flex-column">
+            {{ album.titulo }}
+        </h2>
+    </div>
+    <div class="albums">
+    {% for music in musics %}
+        <hr>
+        <div class="album news-card">
+            <a href="{% url 'bandas:music' music.id %}"><h5>{{ music.nome }}</h5></a>
+            <div class="music-foto">
+            <img src="/media/{{music.capa}}" alt="{{music.nome}}">
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+<div id="bandas-mobile" class="bandas flex-column">
+        <div class="banda flex-column">
+            <img src="/media/{{banda.foto}}" alt="{{banda.nome}}">
+            <h2 class="banda-nome flex-column">
+                {{ album.titulo }}
+            </h2>
+        </div>
+        <div class="albums">
+        {% for music in musics %}
+            <hr>
+            <div class="album news-card">
+                <a href="{% url 'bandas:music' music.id %}"><h5 class="heading">{{ music.nome }}</h5></a>
+                <div class="banda-foto">
+                <img src="/media/{{album.capa}}" alt="{{album.nome}}">
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <style>
+        @media (max-width:768px) {
+    #bandas-laptop {
+        display:none;
+    }
+
+    #bandas-mobile  {
+        display:block;
+    }
+}
+
+@media (min-width:768px) {
+    .banda {
+        left:0%;
+        position:absolute;
+    }
+
+    .albums {
+        left:0%;
+        position:absolute;
+    }
+}
+    </style>
+{% endblock %}

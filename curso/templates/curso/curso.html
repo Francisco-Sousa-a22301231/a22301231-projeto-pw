@@ -1,0 +1,51 @@
+{% extends 'curso/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page text-center flex-column">
+    <div class="heading">
+        <h1 class="heading-text">{{ curso.nome }}</h1>
+        <hr>
+    </div>
+    <div class="info flex-column">
+        <div class="apresentacao">
+            <h5>O que oferecemos:</h5>
+            <hr>
+            <p>{{ curso.apresentacao }}</p>
+        </div>
+        <div class="objetivos">
+            <h5>Os nossos objetivos:</h5>
+            <hr>
+            <p>{{ curso.objetivos }}</p>
+        </div>
+        <div class="ects">
+            <h5>Total de ECTS:</h5>
+            <hr>
+            <p>{{ curso.ects }}</p>
+        </div>
+        <div class="competencias">
+            <h5>Competências:</h5>
+            <hr>
+            <p>{{ curso.competencias }}</p>
+        </div>
+        <div class="num_semestres">
+            <h5>Número de semestres:</h5>
+            <hr>
+            <p>{{ curso.num_semestres }}</p>
+        </div>
+    </div>
+    <div class="disciplinas flex-column">
+        <h5>Disciplinas:</h5>
+        <hr>
+        {% for disciplina in disciplinas %}
+        <div class="disciplina">
+            <a href="{% url 'curso:disciplina' disciplina.id %}"><p>{{ disciplina }}</p></a>
+        </div>
+        {% empty %}
+        <p>No disciplinas found for this course.</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

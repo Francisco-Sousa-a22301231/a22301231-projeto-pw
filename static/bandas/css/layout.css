@@ -1,0 +1,234 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items:auto !important;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items:auto !important;
+}
+
+.heading {
+    margin:10px;
+    color: rgb(0, 123, 255);
+    margin-bottom: 50px;
+    color:white;
+}
+
+.home-text {
+    color:white;
+}
+
+.bands-heading {
+    margin-top:25px;
+    color:white;
+}
+
+.table-container {
+    margin-top:70px;
+      overflow: auto;
+      white-space:nowrap;
+      width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.news-card {
+    margin-top:30px;
+    margin-bottom:30px;
+    position:relative;
+    left:50%;
+    transform: translate(-50%);
+    background-color: whitesmoke;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width:300px;
+    height:auto;
+    padding:50px;
+    overflow: hidden;
+    gap:20px
+}
+
+.news-card-article {
+    margin-top:78px;
+}
+
+.music-info {
+    margin-top: 15px;
+}
+
+img {
+    width: 100%;
+    border-radius:30px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.page {
+    height:auto;
+    width:100%;
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+    overflow:none;
+}
+
+.full-screen-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.album {
+    margin-bottom: 100px;
+}
+
+.container {
+    position:relative;
+    top:50%;
+    transform:translate(0,-50%);
+    z-index:10;
+}
+
+.card {
+	width: 200px;
+	height: 200px;
+	position: relative; /* Ensure card is positioned relatively */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border:0px !important;
+}
+
+.centered-container {
+	display: flex;
+	background-color: invisible;
+	z-index: -3;
+	font-family: Arial, sans-serif;
+	color: #fff;
+	justify-content: center;
+	align-items: center;
+}
+
+.cardFront, .cardBack {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	backface-visibility: hidden;
+}
+.cardBack {
+	transform: perspective(1000px) rotateY(180deg);
+}
+
+.cardBack.flipped {
+	transform: perspective(1000px) rotateY(0deg);
+}
+
+.cardFront {
+	transform: perspective(1000px) rotateY(0deg);
+	padding:20px !important;
+}
+
+.cardFront.flipped {
+	transform: perspective(1000px) rotateY(-180deg);
+}
+
+.banda {
+    margin-bottom: 100px;
+    align-items:center;
+    position:relative;
+    height:100%;
+}
+
+.banda-nome {
+    padding:20px;
+    position:absolute;
+    top:50%;
+    transform:translate(0,-50%);
+    border-radius:25px;
+    background-color:white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.banda img {
+    width:110%;
+}
+
+#bandas-mobile  {
+        display:none;
+    }
+
+#bandas-mobile .banda {
+    padding-top:30px;
+}
+
+.music {
+    margin:30px;
+}
+
+.navbar {
+    background-color:whitesmoke;
+}
+
+.full-size {
+    height:100%;
+    width:100%;
+}
+
+#musica-container {
+    position: absolute;
+    transform: translate(50%,50%);
+}
+
+.slider-container {
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(var(--columns, 3), minmax(0, 1fr));
+    gap: 10px;
+    max-width: 100%; /* Ensure the grid doesn't overflow its container */
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 25%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    overflow: hidden; /* Hide any overflowing content */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflowing text */
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Handle long words properly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width:auto;
+    height: auto;
+}

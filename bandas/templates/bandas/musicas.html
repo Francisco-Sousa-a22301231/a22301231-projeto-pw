@@ -1,0 +1,37 @@
+{% extends 'bandas/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="heading text-center"><h1>Jukebox</h1></div>
+<div class="slider-container">
+    <label for="columnsRange">Number of columns:</label>
+    <input type="range" id="columnsRange" min="1" max="7" value="3">
+</div>
+<div class="grid-container">
+    {% for m in musics %}
+    <div class="grid-item">
+        <a href="/bandas/music/{{m.id}}">
+            <div class="musica-foto">
+                <img src="/media/{{m.foto}}" alt="{{m.titulo}}">
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<style>
+    .page {
+        padding:20px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const columnsRange = document.getElementById('columnsRange');
+        const gridContainer = document.querySelector('.grid-container');
+
+        columnsRange.addEventListener('input', function() {
+            const columns = columnsRange.value;
+            gridContainer.style.setProperty('--columns', columns);
+        });
+    });
+</script>
+{% endblock %}

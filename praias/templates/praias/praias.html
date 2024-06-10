@@ -1,0 +1,22 @@
+{% extends 'praias/layout.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="regioes">
+    {% for regiao in regioes %}
+    <div class="regiao">
+        <h3>{{ regiao }}</h3>
+        <ul>
+            {% for praia in regiao.praias.all %}
+            <li class="">
+                <a href="{% url 'praias:praia' praia.id %}"><h5>{{ praia }}</h5></a>
+                <p><b>Serviços:</b> {% for servico in praia.servicos.all %} {{servico}};{% endfor %}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+<style></style>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'artigos/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="news-card news-card-article flex-column gap">
+    <h1 class="news-title">{{ artigo.titulo }}</h1>
+    <div class="gap flex-row">
+        <a href="{% url 'artigos:tema' artigo.tema.id %}">{{ artigo.tema }}</a>
+        <p>|</p>
+        <span class="date">{{ artigo.data_publicacao }}</span>
+    </div>
+    <img src="/media/{{artigo.imagem}}" alt="News Image">
+    <div class="flex-row gap">
+        {% if user.is_authenticated %}
+            <button id="like-btn" data-artigo-id="{{ artigo.id }}">
+                {% if request.user in artigo.gostos.all %}
+                    <i class="fas fa-thumbs-up"></i> Unlike
+                {% else %}
+                    <i class="far fa-thumbs-up"></i> Like
+                {% endif %}
+            </button>
+        {% else %}
+            <p>Por favor faça Log In para adicionar um Like.</p>
+        {% endif %}
+        <span id="likes-count">{{ artigo.gostos.count }} {% if artigo.gostos.count == 1 %}Like{% else %}Likes{% endif %}</span>
+    </div>
+    <div class="news-details flex.column gap">
+        <p class="news-description">{{ artigo.conteudo }}</p>
+        <h5 class="author">{{artigo.autor.usuario.first_name}} {{artigo.autor.usuario.last_name}}</h5>
+        <!--<img src="/media/{{artigo.autor.foto}}" alt="Author Image">-->
+        <p class="autor-bio">{{ artigo.autor.bio }}</p>
+    </div>
+
+    <div class="comments">
+        <h3>Comments:</h3>
+        <ul class="comment-list">
+            {% for comentario in comentarios %}
+                <li class="comment-card">
+                    <div class="comment-content">
+                        <p>{{ comentario.conteudo }}</p>
+                        <div class="comment-details">
+                            <span class="author">{{ comentario.autor }}</span>
+                            <span class="date">{{ comentario.data_publicacao }}</span>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if user.is_authenticated %}
+            <div class="add-comment">
+                <h6>Adicionar Comentário</h6>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.conteudo }}
+                    <button type="submit" class="submit-button">Enviar</button>
+                </form>
+            </div>
+        {% else %}
+            <p class="login-prompt">Por favor faça Log In para adicionar um comentário.</p>
+        {% endif %}
+    </div>
+</div>
+<script>
+    const likeBtn = document.getElementById('like-btn');
+if (likeBtn) {
+    likeBtn.addEventListener('click', function() {
+        const artigoId = this.dataset.artigoId;
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        fetch("{% url 'artigos:toggle_like' %}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': csrftoken
+            },
+            body: new URLSearchParams({
+                'artigo_id': artigoId
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                console.error('Error:', data.error);
+            } else {
+                // Update button text
+                this.innerText = data.liked ? 'Unlike' : 'Like';
+
+                // Update like count text
+                const likesCountSpan = document.getElementById('likes-count');
+                likesCountSpan.innerText = formatLikesCount(data.likes_count);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+}
+
+function formatLikesCount(count) {
+    if (count === 1) {
+        return count + " Like";
+    } else {
+        return count + " Likes";
+    }
+}
+
+</script>
+{% endblock %}

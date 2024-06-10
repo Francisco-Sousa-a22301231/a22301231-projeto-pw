@@ -1,0 +1,349 @@
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #fff !important; /* White background as in the login page */
+    }
+
+    .navbar-logo {
+      transition: transform 0.5s ease-in-out; /* Speed up the transition a bit */
+    }
+
+    .navbar-logo:hover {
+      animation: shake 0.7s ease-in-out infinite alternate;
+    }
+
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(-1.5px);
+      }
+      50% {
+        transform: translateX(1.5px);
+      }
+    }
+
+    .active {
+        color: #fe0000 !important;
+    }
+
+    .user_card {
+        width: 350px;
+        margin-top: 200px;
+        margin-bottom: auto;
+        background: #fe0000; /* Red background as in the login page */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 25px;
+    }
+
+    p {
+        margin-top:1rem !important;
+    }
+
+    .form_container {
+        margin-top: 20px;
+    }
+
+    form {
+        text-align: center;
+	    flex-direction: row;
+	    gap: 10px;
+    }
+
+    .gap {
+        gap: 15px;
+    }
+
+    #form-title {
+        color: #fff; /* White text for the title */
+    }
+
+    .btn {
+		    margin-top: 10px;
+		    margin-bottom: 10px;
+			background: #a20000 !important;
+			color: white !important;
+		}
+
+		.btn:hover {
+			background: #870000 !important;
+			transition: background-color 0.5s ease;
+		}
+
+		.btn:active {
+			background: #000000 !important;
+		}
+
+    .login_btn {
+        width: 100%;
+        background: #a20000 !important; /* Dark red background for the button */
+        color: white !important;
+    }
+    .login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+    .login_container {
+        padding: 0 2rem;
+    }
+
+    .container {
+		padding: 15px;
+	}
+
+
+	.info {
+	    text-align: center;
+	    display: flex;
+	    flex-direction: column;
+	    margin-top:20px;
+	    color: black;
+	}
+
+	.login {
+	    color: white;
+	}
+
+	.login:hover {
+	    text-decoration: underline white;
+	}
+
+    .input-group-text {
+        background: #000000 !important; /* Mustard color for input group text */
+        color: white !important;
+        border: 0 !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user, .input_pass:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+
+    .links a {
+        color: #fff; /* White color for links */
+    }
+
+    .links a:hover {
+        text-decoration: underline;
+        color: #fff; /* White color for links on hover */
+    }
+
+    #messages {
+        color: #fff; /* White color for messages */
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .comments {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.comments h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-card {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.comment-card:hover {
+    transform: scale(1.02);
+}
+
+.comment-content {
+    margin-bottom: 10px;
+}
+
+.comment-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.comment-details .author {
+    font-weight: bold;
+}
+
+.comment-details .date {
+    font-style: italic;
+}
+
+.add-comment {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-comment h6 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.add-comment form {
+    display: flex;
+    flex-direction: column;
+}
+
+#id_conteudo {
+    border-radius:15px;
+}
+
+.add-comment form p {
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.login-prompt {
+    margin-top: 20px;
+    color: #555;
+    font-style: italic;
+}
+
+        .artigos-page {
+            background-color:lightgrey !important;
+            align-items:center;
+            height:auto%;
+        }
+
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items:center;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items:center;
+    }
+
+    .heading {
+        margin:10px;
+        color: rgb(0, 123, 255);
+    }
+
+
+    .news-card {
+        margin-top:30px;
+        margin-bottom:30px;
+        position:relative;
+        left:50%;
+        transform: translate(-50%);
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        width:70%;
+        padding:50px;
+        overflow: hidden;
+        gap:20px
+    }
+
+    .news-card-article {
+        margin-top:78px;
+    }
+
+    img {
+        width: 100%;
+        border-radius:30px;
+    }
+
+    .news-details img {
+        width:30%;
+        border-radius:50%;
+    }
+
+    .gap {
+        gap:20px;
+    }
+
+
+.news-details * {
+    padding:30px;
+}
+
+.news-title {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.news-description {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 20px;
+}
+
+.metadata {
+    color: #999;
+    font-size: 14px;
+}
+
+.comments {
+    margin-top: 20px;
+    width:90%;
+}
+
+.comments h3 {
+    font-size: 18px;
+}
+
+.comments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comments ul li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+    .page {
+        height:auto%;
+        width:100%;
+        padding:20px !important;
+    }
+
+
+
+

@@ -1,0 +1,37 @@
+{% extends 'bandas/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="full-page-container-musica">
+    <h5 class="musica-nome flex-column">
+        {{ titulo }}
+    </h5>
+    <p>{{ album }}</p>
+    <div class="musica-foto">
+        <img src="/media/{{foto}}" alt="{{titulo}}">
+    </div>
+    <div class="flex-row">
+    <p class="music-info">
+        {{ duracao }} | <a href="{{ link }}">Listen Here</a>
+    </p>
+    </div>
+</div>
+<style>
+    .musica-foto img {
+        width:90%;
+        margin-top:20px;
+    }
+    .full-page-container-musica {
+        text-align: center; /* Optional: To center text inside the container */
+    }
+    .page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .banda {
+        height:auto;
+    }
+</style>
+{% endblock %}
