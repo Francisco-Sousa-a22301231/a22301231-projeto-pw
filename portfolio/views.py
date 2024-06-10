@@ -6,6 +6,9 @@ from selenium.webdriver.safari.webdriver import WebDriver as SafariWebDriver
 def home_view(request):
 
     return render(request, "portfolio/home.html", {})
+
+def videos(request):
+    return render(request, "portfolio/videos.html", {})
 """
 def get_div_content(url, div_id):
 
