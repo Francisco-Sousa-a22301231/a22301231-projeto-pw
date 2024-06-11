@@ -1,0 +1,21 @@
+{% extends 'artigos/layout.html' %}
+{% load static %}
+
+{% block content %}
+<h1>{{ form.instance.pk|yesno:"Edit Article, Add Article" }}</h1>
+    {% if user.is_authenticated %}
+        <form method="post" class="text-center" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    {% else %}
+        <p>You need to be <a href="{% url 'autenticacao' %}">logged in</a> to edit or add articles.</p>
+    {% endif %}
+    <a href="{% url 'artigos:home' %}">Back to Articles</a>
+<style>
+    .page {
+        background-color:white;
+    }
+</style>
+{% endblock %}
