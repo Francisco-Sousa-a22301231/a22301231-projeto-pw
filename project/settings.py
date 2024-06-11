@@ -144,7 +144,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 LOGIN_REDIRECT_URL = '/autenticacao/login/'
-LOGOUT_REDIRECT_URL = '/autenticacao/logout/'
+LOGOUT_REDIRECT_URL = '/autenticacao/login/'
 
 
 
@@ -158,6 +158,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
 
 # Static files (CSS, JavaScript, Images)
