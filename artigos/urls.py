@@ -19,5 +19,7 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="artigos/password_reset_form.html"), name="password_reset_confirm"),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="artigos/password_reset_done.html"), name="password_reset_complete"),
     path('toggle-like/', views.toggle_like, name='toggle_like'),
+    path('artigo/add/', views.artigo_create, name='artigo_create'),
+    path('artigo/<int:pk>/edit/', views.artigo_edit, name='artigo_edit'),
 
 ]
