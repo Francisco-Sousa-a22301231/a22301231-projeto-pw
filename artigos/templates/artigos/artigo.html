@@ -3,6 +3,11 @@
 {% block content %}
 <div class="news-card news-card-article flex-column gap">
     <h1 class="news-title">{{ artigo.titulo }}</h1>
+    {% if user.is_authenticated %}
+    <div class="editArticle">
+        <a href="{% url 'artigos:artigo_edit' artigo.id %}">Editar artigo</a>
+    </div>
+    {% endif %}
     <div class="gap flex-row">
         <a href="{% url 'artigos:tema' artigo.tema.id %}">{{ artigo.tema }}</a>
         <p>|</p>
