@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from curso.models import *
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User, Group
 from forms import UserRegisterForm
+from .forms import CursoForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -103,4 +104,17 @@ def loginPage(request):
 
         context = {}
         return render(request, 'curso/login.html', context)
+
+
+@login_required
+def curso_edit(request, pk):
+    curso = get_object_or_404(Curso, pk=pk)
+    if request.method == "POST":
+        form = CursoForm(request.POST, request.FILES, instance=curso)
+        if form.is_valid():
+            curso = form.save()
+            return curso_view(request, pk)
+    else:
+        form = CursoForm(instance=curso)
+    return render(request, 'curso/curso_form.html', {'form': form})
 
