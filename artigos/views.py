@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from artigos.models import *
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
@@ -7,7 +7,7 @@ from forms import UserRegisterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
-from artigos.forms import ComentarioForm
+from artigos.forms import ComentarioForm, ArtigoForm
 from django.http import JsonResponse
 import logging
 
@@ -161,3 +161,26 @@ def toggle_like(request):
     except Exception as e:
         logger.error(f"Error toggling like: {e}")
         return JsonResponse({'error': str(e)}, status=500)
+
+@login_required
+def artigo_create(request):
+    if request.method == "POST":
+        form = ArtigoForm(request.POST, request.FILES)
+        if form.is_valid():
+            artigo = form.save()
+            return artigo_view(request, artigo.pk)
+    else:
+        form = ArtigoForm()
+    return render(request, 'artigos/artigo_form.html', {'form': form})
+
+@login_required
+def artigo_edit(request, pk):
+    artigo = get_object_or_404(Artigo, pk=pk)
+    if request.method == "POST":
+        form = ArtigoForm(request.POST, request.FILES, instance=artigo)
+        if form.is_valid():
+            artigo = form.save()
+            return artigo_view(request, artigo.pk)
+    else:
+        form = ArtigoForm(instance=artigo)
+    return render(request, 'artigos/artigo_form.html', {'form': form})
