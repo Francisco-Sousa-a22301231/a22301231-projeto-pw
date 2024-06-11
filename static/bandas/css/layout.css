@@ -200,8 +200,9 @@ img {
     transform: translate(50%,50%);
 }
 
-.slider-container {
+.slider-container * {
     margin-bottom: 20px;
+    color:white !important;
 }
 
 .grid-container {
