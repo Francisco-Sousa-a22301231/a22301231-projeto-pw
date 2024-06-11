@@ -1,0 +1,21 @@
+{% extends 'curso/layout.html' %}
+{% load static %}
+
+{% block content %}
+<h1>{{ form.instance.pk|yesno:"Editar Curso, Adicionar Curso" }}</h1>
+    {% if user.is_authenticated %}
+        <form method="post" class="text-center" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    {% else %}
+        <p>You need to be <a href="{% url 'autenticacao' %}">logged in</a> to edit or add bands.</p>
+    {% endif %}
+    <a href="{% url 'curso:home' %}">Voltar ao Curso</a>
+<style>
+    .page {
+        background-color:white;
+    }
+</style>
+{% endblock %}
