@@ -5,6 +5,11 @@
 <div class="heading">
     <h2>Últimos Artigos</h2>
 </div>
+{% if user.is_authenticated %}
+    <div class="addArticle">
+        <a href="{% url 'artigos:artigo_create' %}">Adicionar artigo</a>
+    </div>
+    {% endif %}
 {% for artigo in artigos %}
     <div class="news-card flex-column gap">
     <h1 class="news-title">{{ artigo.titulo }}</h1>
