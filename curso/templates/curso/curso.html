@@ -7,6 +7,11 @@
         <h1 class="heading-text">{{ curso.nome }}</h1>
         <hr>
     </div>
+    {% if user.is_authenticated %}
+    <div class="editCurso">
+        <a href="{% url 'curso:curso_edit' pk=curso.pk %}">Editar Curso</a>
+    </div>
+    {% endif %}
     <div class="info flex-column">
         <div class="apresentacao">
             <h5>O que oferecemos:</h5>
